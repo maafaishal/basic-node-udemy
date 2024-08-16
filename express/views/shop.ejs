@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <%- include('includes/head.ejs') %>
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/admin/add-product">Admin</a></li>
+        <li><a href="/admin/product">Shop</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>My products</h1>
+      <main>
+        <% if (products.length > 0) { %>
+        <div class="container text-center">
+          <div class="row">
+            <% for (let p of products) { %>
+            <div class="col">
+              <img src="https://picsum.photos/300/300" />
+              <h1><%= p.title %></h1>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <% } else { %>
+        <h1>No Products</h1>
+        <% } %>
+      </main>
+    </main>
+  </body>
+</html>
