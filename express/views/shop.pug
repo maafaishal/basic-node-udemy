@@ -1,0 +1,15 @@
+extends layouts/main-layout.pug
+
+block content
+    h1 My products
+    main
+        if products.length > 0
+            .container.text-center
+                .row
+                    each product in products 
+                        .col
+                            img(src="https://picsum.photos/300/300")
+                            h1 #{product.title}
+        else
+            h1 No products!
+        
